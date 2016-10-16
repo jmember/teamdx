@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+
+        <title>Teamdx HTML Reference</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+        <!-- tagListGenerator -->
+        <script src="js/tagListGenerator.js"></script>
+
+        <!-- search bar js -->
+        <script src="js/overlay.js"></script>
+
+        <style>
+          #pageTitle {padding-bottom: 10px;}
+        </style>
+    </head>
+
+    <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="tags.html">Tags</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="encoding.html">Encodings</a></li>
+              <li><a href="canvas.html">Canvas</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <div class="jumbotron" id="home">
+          <h1 id="logo-name">Teamdx HTML Documentation</h1>
+            <div class="col-lg-6">
+                <div class="input-append">
+                    <input type="text" class="span2" id="appendedInputButton" size="35">
+                    <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- start overlay -->
+        <div id="overlay"></div>
+        <!-- end Overlay -->
+        <!-- start of overlay content box -->
+        <div id="search-result-frame">
+            <div id="search-result">
+                <p class="lead">Search Result</p>
+                <hr>
+                <div id="result">
+                </div>
+                <span id="linkHere"></span>
+                <button onmousedown="toggleOverlay()">close</button>
+            </div>
+        </div>
+        <!-- end of overlay content box -->
+
+        <!-- content goes here -->
+
+        <h1 id="pageTitle">HTML Tags</h1>
+        <table id="tag_list" class="table">
+          <tbody id="tblBody">
+            <script type="text/javascript">tagListGenerator();</script>
+          </tbody>
+          <!-- <tr>
+            <th class="col-md-4">Tag</th>
+            <th class="col-md-4">Function</th>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">!DOCTYPE</a></td>
+            <td class="col-md-4">Defines the document type</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">a</a></td>
+            <td class="col-md-4">Defines a hyperlink</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">abbr</a></td>
+            <td class="col-md-4">Defines a abbreviation or an acronym</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">address</a></td>
+            <td class="col-md-4">Defines contact information for the author/owner of a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">area</a></td>
+            <td class="col-md-4">Defines an area inside an image-map</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">article</a></td>
+            <td class="col-md-4">Defines an article</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">aside</a></td>
+            <td class="col-md-4">Defines content aside from the page content</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">audio</a></td>
+            <td class="col-md-4">Defines sound content</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">b</a></td>
+            <td class="col-md-4">Defines bold text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">base</a></td>
+            <td class="col-md-4">Specifies the base URL/target for all relative URLs in a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">bdi</a></td>
+            <td class="col-md-4">Isolates part of a text that might be formatted in a different direction from other text outside it</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">bdo</a></td>
+            <td class="col-md-4">Overrides the current text direction</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="Tag_page_blockquote.html">blockquote (only functional now)</a></td>
+            <td class="col-md-4">Defines a section that is quoted from another source</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">body</a></td>
+            <td class="col-md-4">Defines the document's</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">br</a></td>
+            <td class="col-md-4">Defines a single line break</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">button</a></td>
+            <td class="col-md-4">Defines a clickable button</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">canvas</a></td>
+            <td class="col-md-4">Used to draw graphics, on the fly, via scripting</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">caption</a></td>
+            <td class="col-md-4">Defines defines a table caption</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">cite</a></td>
+            <td class="col-md-4">Defines the title of a work</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">code</a></td>
+            <td class="col-md-4">Defines a piece of computer code</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">col</a></td>
+            <td class="col-md-4">Specifies column properties for each column within a &lt;colgroup&gt; element</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">colgroup</a></td>
+            <td class="col-md-4">Specifies a group of one or more columns in a table for formatting</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">datalist</a></td>
+            <td class="col-md-4">Specifies a list of pre-defined options for input controls</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">dd</a></td>
+            <td class="col-md-4">Defines a description/value of a term in a description list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">del</a></td>
+            <td class="col-md-4">Defines text that has been deleted from a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">details</a></td>
+            <td class="col-md-4">Defines additional details that the user can view or hide</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">dfn</a></td>
+            <td class="col-md-4">Represents the defining instance of a term</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">dialong</a></td>
+            <td class="col-md-4">Defines a dialog box or windows</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">div</a></td>
+            <td class="col-md-4">Defines a section in a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">dl</a></td>
+            <td class="col-md-4">Defines a description list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">dt</a></td>
+            <td class="col-md-4">Defines a term/name in a description list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">em</a></td>
+            <td class="col-md-4">Defines emphasized text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">embed</a></td>
+            <td class="col-md-4">Defines a container for an external application</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">fieldset</a></td>
+            <td class="col-md-4">Group related elements in a form</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">figcaption</a></td>
+            <td class="col-md-4">Defines a caption for a &lt;figure&gt; element</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">figure</a></td>
+            <td class="col-md-4">Specifies self-contained content</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">footer</a></td>
+            <td class="col-md-4">Defines a footer for a document or section</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">form</a></td>
+            <td class="col-md-4">Defines an HTML form for user input</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">h1 to h6</a></td>
+            <td class="col-md-4">Defines HTML headings</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">head</a></td>
+            <td class="col-md-4">Defines information about the document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">header</a></td>
+            <td class="col-md-4">Defines a header for a document or section</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">hr</a></td>
+            <td class="col-md-4">Defines a thematic change in the content</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">html</a></td>
+            <td class="col-md-4">Defines the root of an HTML document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">i</a></td>
+            <td class="col-md-4">Defines a part of text in an alternate voice or mood</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">iframe</a></td>
+            <td class="col-md-4">Defines an inline frame</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">img</a></td>
+            <td class="col-md-4">Defines an image</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">input</a></td>
+            <td class="col-md-4">Defines an input control</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">ins</a></td>
+            <td class="col-md-4">Defines a text that has been inserted into a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">kbd</a></td>
+            <td class="col-md-4">Defines keyboard input</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">keygen</a></td>
+            <td class="col-md-4">Defines a key-pair generator field</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">label</a></td>
+            <td class="col-md-4">Defines a label for an &lt;input&gt; element</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">legend</a></td>
+            <td class="col-md-4">Defines a caption for a &lt;fieldset&gt; element</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">li</a></td>
+            <td class="col-md-4">Defines a list item</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">link</a></td>
+            <td class="col-md-4">Defines the relationship between a document and an external resource</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">main</a></td>
+            <td class="col-md-4">Specifies the main content of a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">map</a></td>
+            <td class="col-md-4">Defines a client-side image-map</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">mark</a></td>
+            <td class="col-md-4">Defines marked/highlighted text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">menu</a></td>
+            <td class="col-md-4">Defines a list/menu of commands</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">menuitem</a></td>
+            <td class="col-md-4">Defines a command/menu item that the user can invoke from a popup menu</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">meta</a></td>
+            <td class="col-md-4">Defines metadata about an HTML document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">metter</a></td>
+            <td class="col-md-4">Defines a scalar measurement within a known range</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">nav</a></td>
+            <td class="col-md-4">Defines navigation links</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">noscript</a></td>
+            <td class="col-md-4">Defines an alternate content for users that do not support client-side scripts</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">object</a></td>
+            <td class="col-md-4">Defines an embedded object</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">ol</a></td>
+            <td class="col-md-4">Defines an ordered list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">optgroup</a></td>
+            <td class="col-md-4">Defines a group of related options in a drop-down list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">option</a></td>
+            <td class="col-md-4">Defines an option in a drop-down list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">output</a></td>
+            <td class="col-md-4">Defines the result of a calculation</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">p</a></td>
+            <td class="col-md-4">Defines a paragraph</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">param</a></td>
+            <td class="col-md-4">Defines a parameter for an object</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">pre</a></td>
+            <td class="col-md-4">Defines preformatted text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">progress</a></td>
+            <td class="col-md-4">Represents the progress of a task</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">q</a></td>
+            <td class="col-md-4">Defines a short quotation</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">rp</a></td>
+            <td class="col-md-4">Defines what to show in browsers that do not support ruby annotations</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">rt</a></td>
+            <td class="col-md-4">Defines an explanation/pronunciation of characters</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">s</a></td>
+            <td class="col-md-4">Defines text that is no longer correct</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">sampl</a></td>
+            <td class="col-md-4">Defines sample output from a computer program</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">script</a></td>
+            <td class="col-md-4">Defines a client-side script</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">section</a></td>
+            <td class="col-md-4">Defines a section in a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">select</a></td>
+            <td class="col-md-4">Defines a drop-down list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">small</a></td>
+            <td class="col-md-4">Defines smaller text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">source</a></td>
+            <td class="col-md-4">Defines multiple media resources for media elements</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">span</a></td>
+            <td class="col-md-4">Defines a section of a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">strong</a></td>
+            <td class="col-md-4">Defines important text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">style</a></td>
+            <td class="col-md-4">Defines style information for a document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">sub</a></td>
+            <td class="col-md-4">Defines subscripted text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">summary</a></td>
+            <td class="col-md-4">Defines a visible heading for a &lt;details&gt; element</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">sup</a></td>
+            <td class="col-md-4">Defines superscripted text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">table</a></td>
+            <td class="col-md-4">Defines a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">tbody</a></td>
+            <td class="col-md-4">Groups the body content in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">td</a></td>
+            <td class="col-md-4">Defines a cell in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">textarea</a></td>
+            <td class="col-md-4">Defines a multiline input control</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">tfoot</a></td>
+            <td class="col-md-4">Groups the footer content in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">th</a></td>
+            <td class="col-md-4">Defines a header cell in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">thead</a></td>
+            <td class="col-md-4">Groups the header content in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">time</a></td>
+            <td class="col-md-4">Defines a date/time</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">title</a></td>
+            <td class="col-md-4">Defines a title for the document</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">tr</a></td>
+            <td class="col-md-4">Defines a row in a table</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">track</a></td>
+            <td class="col-md-4">Defines text tracts for media elements</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">u</a></td>
+            <td class="col-md-4">Defines text that should be stylistically different from normal text</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">ul</a></td>
+            <td class="col-md-4">Defines an unordered list</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">var</a></td>
+            <td class="col-md-4">Defines a variable</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">video</a></td>
+            <td class="col-md-4">Defines a video or movie</td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><a href="#">wbr</a></td>
+            <td class="col-md-4">Defines a possible line-break</td>
+          </tr> -->
+        </table>
+
+        <!-- go up button
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span>-->
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+      </div>
+    </body>
+</html>

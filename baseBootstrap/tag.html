@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Teamdx HTML Reference</title>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+    <!-- tagLoader -->
+    <script src="js/tagGenerator.js"></script>
+
+    <!-- search bar js -->
+    <script src="js/overlay.js"></script>
+
+    <!-- Tag bar generator -->
+    <script src="js/tagBarGenerator.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      #tagsList {
+        list-style-type: none;
+        padding-left: 0;
+        padding-bottom: 20px;
+      }
+      #tagsList a {
+        font-size: 16px;
+      }
+      #tagsList a:hover {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      #tagsList li {
+        margin-bottom: 2px;
+        margin-bottom: 2px;
+      }
+
+      #sideTitle {
+        padding-top: 20;
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="tags.html">Tags</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="encoding.html">Encodings</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      <div class="jumbotron" id="home">
+        <h1 id="logo-name">Teamdx HTML Documentation</h1>
+          <div class="col-lg-6">
+              <div class="input-append">
+                  <input type="text" class="span2" id="appendedInputButton" size="35">
+                  <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+              </div>
+          </div>
+      </div>
+
+
+      <!-- start overlay -->
+      <div id="overlay"></div>
+      <!-- end Overlay -->
+      <!-- start of overlay content box -->
+      <div id="search-result-frame">
+          <div id="search-result">
+              <p class="lead">Search Result</p>
+              <hr>
+              <div id="result">
+              </div>
+              <span id="linkHere"></span>
+              <button onmousedown="toggleOverlay()">close</button>
+          </div>
+      </div>
+      <!-- end of overlay content box -->
+
+      <div class="col-md-2">
+        <h4 id = "sideTitlh3">HTML Tags</h4>
+        <ul id = "tagsList">
+          <!-- <li role="presentation"><a href="tag_page_blockquote.html"> em </a></li> -->
+        </ul>
+      </div>
+      <script type="text/javascript">generateTagBar();</script>
+
+
+
+
+      <div class="col-md-10">
+        <h1 id = "tagTitle"></h1>
+        <hr>
+        <!-- Definition -->
+        <h3>Definition and Usage</h3>
+        <p id="def"></p>
+        <hr>
+        <!-- Supported Browsers -->
+        <table class="table">
+          <tr>
+            <td><img alt="chrome" src="img/logo_chrome.png" width="125px" height="125px"></td>
+            <td><img alt="safari" src="img/logo_safari.png" width="125px" height="125px"></td>
+            <td><img alt="opera" src="img/logo_opera.png" width="125px" height="125px"></td>
+            <td><img alt="firefox" src="img/logo_firefox.png" width="125px" height="125px"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="s_chrome" onclick="return false;"></td>
+            <td><input type="checkbox" id="s_safari" onclick="return false;"></td>
+            <td><input type="checkbox" id="s_opera" onclick="return false;"></td>
+            <td><input type="checkbox" id="s_firefox" onclick="return false;"></td>
+          </tr>
+        </table>
+        <hr>
+        <!-- Examples -->
+        <h3>Example</h3>
+        <textarea id="exBox" rows = "15" cols = "60"></textarea>
+        <br>
+        <!-- <button class="btn" onclick="tryIt();">Try it yourself</button> -->
+        <!-- Attributes -->
+        <div id="attrs">
+          <h3>Attributes</h3>
+          <table class="table" id="attrTbl">
+            <tbody id="attrTblBody"></tbody>
+          </table>
+        </div>
+        <script>processTag();</script>
+
+
+        <!-- go up button
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span>-->
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

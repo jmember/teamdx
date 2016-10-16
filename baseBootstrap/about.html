@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+
+        <title>Teamdx HTML Reference</title>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+        <!-- search bar js -->
+        <script src="js/overlay.js"></script>
+
+        <style>
+          .descBox {
+            vertical-align: top;
+            padding-top:5px;
+            padding-right: 25px;
+          }
+          .descBox ul {
+            padding-left: 15px;
+          }
+        </style>
+    </head>
+
+    <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="tags.html">Tags</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="encoding.html">Encodings</a></li>
+              <li><a href="canvas.html">Canvas</a></li>
+              <li class="active"><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <div class="jumbotron" id="home">
+          <h1 id="logo-name">Teamdx HTML Documentation</h1>
+            <div class="col-lg-6">
+                <div class="input-append">
+                    <input type="text" class="span2" id="appendedInputButton" size="35">
+                    <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- start overlay -->
+        <div id="overlay"></div>
+        <!-- end Overlay -->
+        <!-- start of overlay content box -->
+        <div id="search-result-frame">
+            <div id="search-result">
+                <p class="lead">Search Result</p>
+                <hr>
+                <div id="result">
+                </div>
+                <span id="linkHere"></span>
+                <button onmousedown="toggleOverlay()">close</button>
+            </div>
+        </div>
+        <!-- end of overlay content box -->
+
+
+        <h1>About</h1>
+        <h3>This Page</h3>
+        <p>
+               HTML Documentation witnessed creation in 2015 and was made by four web developers that saw
+               the need for a much organized and efficient way of allowing users to navigate through various
+               references on HTML/CSS. This includes tags, attributes, color and more specific info on each one.
+        </p>
+
+        <h3>Copyright Information</h3>
+        <p> All pages and graphics on this web site are the property.
+            Failure to do so is a violation of copyright laws.</p>
+        <h3> Warranties</h3>
+
+        <p> HTML Documentation is provided without warranty of any kind. There are no guarantees that use of the site will not be subject to interruptions. All direct or indirect risk related to use of the site is entirely by the user. All code provided by us is provided as examples without warranties to performance, fitness, merchantability, and/or any other warranty (whether expressed or implied).</p>
+
+        <h3>Your Conduct</h3>
+        <p> While using this site, you agree to have read and accepted all the information on this page.</p>
+
+        <table >
+            <tr id = "title">
+                <td><b> Easy Navigation </b> </td>
+                <td><b> Multiple References </b></td>
+                <td><b> Simple to Use </b></td>
+            </tr>
+            <tr id = "title_list">
+                <td class="descBox">
+                    <ul>
+                        <li> Navigation Menu on the left side </li>
+                        <li> Search bar on the top</li>
+                        <li> Drop down menu</li>
+                    </ul
+                </td>
+
+                <td class="descBox">
+                    <ul>
+                        <li> All HTML Tags - with descriptive info on how it's used, <br>browser support and much more!</li>
+                        <li> All Global Attributes including those specific to <br>individual tags</li>
+                        <li> Color Hex values for the color you are looking for <br>with a preview of how the color will look like in our table</li>
+                    </ul>
+                </td>
+                <td class="descBox">
+                    <ul>
+                        <li> Focus of website is for ease of use and to exclude anything unrelated </li>
+                        <li> Free to use as a complete resource for your HTML needs</li>
+                        <li> Several code examples that will allow you to practice with any element you find here</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <h3>About The Team</h3>
+        <p>
+          We are current Computer Science/Engineering students at UCSD. More on us below.
+        </p>
+        <h4>Javier Contreras</h4>
+        <p>
+          Javier is one of the four developers that created HTML
+          documentation. He was responsible for the design of some of the
+          pages and helping to make sure the site is responsive. He lives in
+          San Diego and is currently attending UCSD as an undergrad studying
+          Computer Science and Political Science as a minor.
+        </p>
+        <h4>Jorge Loo Cheng</h4>
+        <p>
+          Jorge is a Computer Engineering major interested in creating
+          efficient software and web applications.
+        </p>
+        <h4>Juan Ching</h4>
+        <p>
+          One of the four developers in charge of this website. He is an
+          undergrad in the Computer Science and Engineering Department of
+          University of California, San Diego.
+        </p>
+        <h4>Byung-Chul In</h4>
+        <p>
+          Byung-Chul is a current student at UCSD majoring Computer Science.
+          He has taken numerous upper division classes including Computer
+          Security and Web Server Development. He currently works as an intern
+          in a laser distribution company.
+        </p>
+        <!-- button to go up
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span>  -->
+
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                  <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+
+      </div>
+
+    </body>
+</html>

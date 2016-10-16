@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+
+        <title>Teamdx HTML Reference</title>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- External Javascript File -->
+        <script type="text/javascript" src="js/eventsTable.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- Firebase library -->
+        <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+        <!-- search bar js -->
+        <script src="js/overlay.js"></script>
+
+    </head>
+
+    <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="tags.html">Tags</a></li>
+              <li class="active"><a href="events.html">Events</a></li>
+              <li><a href="encoding.html">Encodings</a></li>
+              <li><a href="canvas.html">Canvas</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <div class="jumbotron" id="home">
+          <h1 id="logo-name">Teamdx HTML Documentation</h1>
+            <div class="col-lg-6">
+                <div class="input-append">
+                    <input type="text" class="span2" id="appendedInputButton" size="35">
+                    <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- start overlay -->
+        <div id="overlay"></div>
+        <!-- end Overlay -->
+        <!-- start of overlay content box -->
+        <div id="search-result-frame">
+            <div id="search-result">
+                <p class="lead">Search Result</p>
+                <hr>
+                <div id="result">
+                </div>
+                <span id="linkHere"></span>
+                <button onmousedown="toggleOverlay()">close</button>
+            </div>
+        </div>
+        <!-- end of overlay content box -->
+
+        <!-- content goes here -->
+          <h1> Events </h1>
+            <!-- Clipboard -->
+            <h3> Clipboard Events </h3>
+            <div id="CBEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "ClipboardEvent";
+                var tagline = "CBEvents-div"
+                createEventTable(CBString, tagline);
+              </script>
+            </div>
+
+            <!-- Form -->
+            <h3> Form Events </h3>
+            <div id="FormEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "FormEvent";
+                var tagline = "FormEvents-div"
+                createEventTable(CBString, tagline);
+              </script>
+            </div>
+
+            <!-- Media -->
+            <h3> Media Events </h3>
+            <div id="MediaEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "MediaEvent";
+                var tagline = "MediaEvents-div"
+                createEventTable(CBString, tagline);
+             </script>
+            </div>
+
+            <!-- Misc -->
+            <h3> Misc Events </h3>
+            <div id="MiscEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "MiscEvent";
+                var tagline = "MiscEvents-div"
+                createEventTable(CBString, tagline);
+             </script>
+            </div>
+
+            <!-- Mouse -->
+            <h3> Mouse Events </h3>
+            <div id="MouseEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "MouseEvent";
+                var tagline = "MouseEvents-div"
+                createEventTable(CBString, tagline);
+             </script>
+            </div>
+
+            <!-- Window-->
+            <h3> Window Events </h3>
+            <div id="WindowEvents-div">
+              <!-- Events here -->
+              <script>
+                // Creates the Clip Board Events Table
+                var CBString = "WindowEvent";
+                var tagline = "WindowEvents-div"
+                createEventTable(CBString, tagline);
+             </script>
+            </div>
+
+        </div>
+
+        <!-- go up button
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span>-->
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+      </div>
+    </body>
+</html>

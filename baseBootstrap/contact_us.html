@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+
+        <title>Teamdx HTML Reference</title>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- search bar js -->
+        <script src="js/overlay.js"></script>
+
+        <style type="text/css">
+          #button1 {
+            padding-left: 78px;
+          }
+          td {
+            padding: 10px;
+          }
+        </style>
+    </head>
+
+    <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="tags.html">Tags</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="encoding.html">Encodings</a></li>
+              <li><a href="canvas.html">Canvas</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <div class="jumbotron" id="home">
+          <h1 id="logo-name">Teamdx HTML Documentation</h1>
+            <div class="col-lg-6">
+                <div class="input-append">
+                    <input type="text" class="span2" id="appendedInputButton" size="35">
+                    <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- start overlay -->
+        <div id="overlay"></div>
+        <!-- end Overlay -->
+        <!-- start of overlay content box -->
+        <div id="search-result-frame">
+            <div id="search-result">
+                <p class="lead">Search Result</p>
+                <hr>
+                <div id="result">
+                </div>
+                <span id="linkHere"></span>
+                <button onmousedown="toggleOverlay()">close</button>
+            </div>
+        </div>
+        <!-- end of overlay content box -->
+        <h1>Contact Us</h1>
+        <p>Questions or commnents about our site? Contact us by filling
+          out the form below.
+        </p>
+
+        <form action="mailto:maxoutpc@gmail.com" method="post" enctype="text/plain">
+          <table border="0" cellpadding="0", width="900">
+            <tr class="shiftedTr">
+              <td align=right><b>Name:</b></td>
+              <td><input type="text" name="Name " size="75"></td>
+            </tr>
+            <tr class="shiftedTr">
+              <td align=right><b>Subject: </b></td>
+              <td><input type="text" name="subject " value="" size="75"></td>
+            </tr>
+            <tr class="shiftedTr">
+              <td align=right><b>Comment: </b></td>
+              <td><textarea cols="74" wrap="virtual" rows="6" name="body "></textarea></br></td>
+            </tr>
+            <tr class="shiftedTr">
+              <td></td>
+              <td><input type="submit" value="Send"> <input type="reset" name="reset" value="Clear"></td>
+            </tr>
+          </table>
+        </form>
+
+
+        <!-- go up arrow
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span> -->
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+      </div>
+    </body>
+</html>

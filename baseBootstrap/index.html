@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- TEAMDX-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+
+        <title>Teamdx HTML Reference</title>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+        <!-- main page generator -->
+        <script src="js/mainPageDataGen.js"></script>
+
+        <!-- search bar js -->
+        <script src="js/overlay.js"></script>
+
+        <style>
+          #eventsTitle, #urlEncoding { margin-top: 0; }
+          caption{ padding-top: 0;}
+          table { margin-bottom: 10px;}
+          #textConverter { margin-bottom: 0; }
+          .noTopMargin{ margin-top: 0px; }
+        </style>
+    </head>
+    <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class= "active"><a href="index.html">Home</a></li>
+              <li><a href="tags.html">Tags</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="encoding.html">Encodings</a></li>
+              <li><a href="canvas.html">Canvas</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="jumbotron" id="home">
+          <h1 id="logo-name">Teamdx HTML Documentation</h1>
+            <div class="col-lg-6">
+                <div class="input-append">
+                    <input type="text" class="span2" id="appendedInputButton" size="35">
+                    <button class="btn btn-default" type="button" onclick="toggleOverlay()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- start overlay -->
+        <div id="overlay"></div>
+        <!-- end Overlay -->
+        <!-- start of overlay content box -->
+        <div id="search-result-frame">
+            <div id="search-result">
+                <p class="lead">Search Result</p>
+                <hr>
+                <div id="result">
+                </div>
+                <span id="linkHere"></span>
+                <button onmousedown="toggleOverlay()">close</button>
+            </div>
+        </div>
+        <!-- end of overlay content box -->
+
+        <h3> About </h3>
+        <p> The purpose the site and how you should use the site.</p>
+        <hr>
+        <div>
+          <section>
+            <h3>References</h3>
+            <p> Find complete references about tags, attributes, events, color names, entities and more. </p>
+            <table class="table">
+                <caption><h4> Tags <span class="more-page"><a href="tags.html">See more</a></span></h4></caption>
+                <tbody id="tagTblBody">
+                </tbody>
+                <!-- <colgroup class="tag">
+                    <col span="5">
+                </colgroup>
+                <tr>
+                    <td><a href="#">&lt;!--...--&gt;</a></td>
+                    <td><a href="#">&lt;!DOCTYPE&gt;</a></td>
+                    <td><a href="#">&lt;a&gt;</a></td>
+                    <td><a href="#">&lt;abbr&gt;</a></td>
+                    <td><a href="#">&lt;address&gt;</a></td>
+
+                </tr>
+                <tr>
+                    <td><a href="#">&lt;area&gt;</a></td>
+                    <td><a href="#">&lt;article&gt;</a></td>
+                    <td><a href="#">&lt;aside&gt;</a></td>
+                    <td><a href="#">&lt;audio&gt;</a></td>
+                    <td><a href="#">&lt;b&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">&lt;base&gt;</a></td>
+                    <td><a href="#">&lt;bdi&gt;</a></td>
+                    <td><a href="#">&lt;bdo&gt;</a></td>
+                    <td><a href="Tag_page_blockquote.html">&lt;blockquote&gt;</a></td>
+                    <td><a href="#">&lt;body&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">&lt;br&gt;</a></td>
+                    <td><a href="#">&lt;button&gt;</a></td>
+                    <td><a href="#">&lt;canvas&gt;</a></td>
+                    <td><a href="#">&lt;caption&gt;</a></td>
+                    <td><a href="#">&lt;cite&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">&lt;code&gt;</a></td>
+                    <td><a href="#">&lt;col&gt;</a></td>
+                    <td><a href="#">&lt;colgroup&gt;</a></td>
+                    <td><a href="#">&lt;datalist&gt;</a></td>
+                    <td><a href="#">&lt;dd&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">&lt;del&gt;</a></td>
+                    <td><a href="#">&lt;details&gt;</a></td>
+                    <td><a href="#">&lt;dfn&gt;</a></td>
+                    <td><a href="#">&lt;dialog&gt;</a></td>
+                    <td><a href="#">&lt;div&gt;</a></td>
+                </tr> -->
+            </table>
+            <table class="table">
+                <caption><h4>Attributes <span class="more-page"><a href="global_attributes.html">See more</a></span></h4></caption>
+                <!-- <colgroup class="attributes">
+                    <col span="5">
+                </colgroup>
+                <tr>
+                    <td><a href="#">accesskey</a></td>
+                    <td><a href="#">class</a></td>
+                    <td><a href="#">contenteditable</a></td>
+                    <td><a href="#">contextmenu</a></td>
+                    <td><a href="#">data-*</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">dir</a></td>
+                    <td><a href="#">draggable</a></td>
+                    <td><a href="#">dropzone</a></td>
+                    <td><a href="#">hidden</a></td>
+                    <td><a href="#">id</a></td>
+                </tr> -->
+                <tbody id="attrsTbody"></tbody>
+            </table>
+            <table class="table">
+                <caption><h4> Color Names <span class="more-page"><a href="Color.html">See more</a></span></h4></caption>
+                <tbody id="colorTbody"></tbody>
+                <!-- <colgroup>
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>Color Name</th>
+                    <th> Hex </th>
+                    <th> Color</th>
+                </tr>
+                <tr>
+                    <td>AliceBlue</td>
+                    <td>#F0F8FF</td>
+                    <td bgcolor="#F0F8FF"></td>
+                </tr>
+                <tr>
+                    <td>AntiqueWhite</td>
+                    <td>#FAEBD7</td>
+                    <td bgcolor="#FAEBD7"></td>
+                </tr>
+                <tr>
+                    <td>Aqua</td>
+                    <td>#00FFFF</td>
+                    <td bgcolor="#00FFFF"></td>
+                </tr>
+                                            <tr>
+                    <td>Aquamarine</td>
+                    <td>#7FFFD4</td>
+                    <td bgcolor="#7FFFD4"></td>
+                </tr>
+                                            <tr>
+                    <td>Azure</td>
+                    <td>#F0FFFF</td>
+                    <td bgcolor="#F0FFFF"></td>
+                </tr>
+                <tr>
+                    <td>Beige</td>
+                    <td>#F5F5DC</td>
+                    <td bgcolor="#F5F5DC"></td>
+                </tr>
+                                            <tr>
+                    <td>Bisque</td>
+                    <td>#FFE4C4</td>
+                    <td bgcolor="#FFE4C4"></td>
+                </tr>
+                                            <tr>
+                    <td>Black</td>
+                    <td>#000000</td>
+                    <td bgcolor="#000000"></td>
+                </tr> -->
+            </table>
+          </section>
+        </div>
+    <hr>
+        <div class="row" id="eventsRow" > <!-- Block for Events and Renderer -->
+            <div class="col-md-6"> <!-- Block for Events-->
+                <section>
+                    <h3 id="eventsTitle">Events</h3>
+                    <p>Find the event attribute you need with its definition, example, sytax, and browser.</p>
+                    <table class="table">
+                      <caption><h4>Events <span class="more-page"><a href="events.html">See more</a></span></h4></caption>
+
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>onafterprint</td>
+                            <td>script</td>
+                            <td>Script to be run after the document is printed</td>
+                        </tr>
+                        <tr>
+                            <td>onbeforeprint</td>
+                            <td>script</td>
+                            <td>Script to run before the document is printed</td>
+                        </tr>
+                        <tr>
+                            <td>onbeforeunload</td>
+                            <td>script</td>
+                            <td>Script to be run when the document is about to be unloaded</td>
+                        </tr>
+                    </table>
+                </section>
+            </div> <!-- End of Event block-->
+            <div> <!-- Vertical line between Events and Renderer --></div>
+            <div class="col-md-6"> <!-- Block for Text Convertor -->
+                <section>
+                    <h3 class="noTopMargin">Renderer</h3>
+                    <p> See how your html source code is rendered.</p>
+                    <div class="well" id="textConverter" >
+                        <h2><small>Example for &lt;a&gt; tag</small></h2>
+                        A link to UCSD
+                        <div class="nested-well">
+                            <code>
+                                &lt;a href="http://www.ucsd.edu"&gt;UCSD&lt;/a&gt;
+                            </code>
+                        </div>
+                        <button class="btn btn-default">See Result &gt;&gt;</button>
+                    </div>
+                </section>
+            </div> <!-- End of text convertor block -->
+        </div>
+        <hr>
+        <div class="row"> <!-- Block for Frame and Fonts-->
+            <div class="col-md-6"> <!-- Block for Frame-->
+                <section>
+                    <h3 id="urlEncoding">URL Encoding</h3>
+                    <p>Find the URL encoding converts characters into a format that can be transmitted over the Internet.</p>
+                    <table class="table">
+                        <caption>
+                            <h4>ASCII Encoding References
+                              <span class="more-page">
+                                  <a href="encoding.html">See more</a>
+                              </span>
+                            </h4>
+                        </caption>
+                        <tr>
+                            <th>Character</th>
+                            <th>From Windows-1252</th>
+                            <th>From UTF-8</th>
+                        </tr>
+                        <tr>
+                            <td>Space</td>
+                            <td>%20</td>
+                            <td>%20</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>%21</td>
+                            <td>%21</td>
+                        </tr>
+                        <tr>
+                            <td>"</td>
+                            <td>%22</td>
+                            <td>%22</td>
+                        </tr>
+                    </table>
+                </section>
+            </div> <!-- End of Frame block-->
+            <div> <!-- Vertical line between Frame and Fonts --></div>
+            <div class="col-md-6"> <!-- Block for Fonts-->
+                    <h3 class="noTopMargin">Canvas</h3>
+                    <p> Our reference will cover the properties and methods for &lt;canvas&gt; tag.</p>
+                    <table class="table">
+                        <caption><h4>Methods on Canvas <span class="more-page"><a href="canvas.html">See more</a></span></h4></caption>
+                        <tr>
+                            <th>Method-path</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>fill()</td>
+                            <td>Fills the current drawing (path)</td>
+                        </tr>
+                        <tr>
+                            <td>stroke()</td>
+                            <td>Actually draws the path you have defined</td>
+                        </tr>
+                        <tr>
+                            <td>beginPath()</td>
+                            <td>Begins a path, or resets the current path</td>
+                        </tr>
+                    </table>
+                </section>
+            </div> <!-- End of Fonts block-->
+        </div>
+
+
+        <!-- go up button
+        <span id="go-up"><a href="#home">
+            <img src="./up-arrow.png" alt="go-up" title="Go to Top">
+          </a></span>-->
+        <hr>
+        <footer class="row">
+            <div class="footer-cnt">
+                <nav class="text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="Contact_us.html">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+      </div>
+      <script>mainPageDataGen();</script>
+    </body>
+</html>
